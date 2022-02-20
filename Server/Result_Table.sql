@@ -1,0 +1,20 @@
+SET SERVEROUTPUT ON;
+SET VERIFY OFF;
+
+
+
+DECLARE
+  A TARGET_CLASS1.patientId%TYPE;
+  B TARGET_CLASS1.tscore%TYPE;
+  
+BEGIN
+	FOR R IN (SELECT * FROM TARGET_CLASS1) LOOP
+		A := R.patientId;
+		B := R.tscore;
+		DBMS_OUTPUT.PUT_LINE(A || ' ' || B);
+		
+		
+		
+	END LOOP;
+END;
+/
